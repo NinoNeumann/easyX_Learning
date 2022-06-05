@@ -10,7 +10,7 @@ namespace animation
 	class bomb:public anima
 	{
 	public:
-		static const unsigned radius = 7; // 烟花颗粒的半径		 (单位：像素) 
+		static const unsigned radius = 10; // 烟花颗粒的半径		 (单位：像素) 
 		static double		  max_v;	  // 爆炸颗粒速度的最大值 （单位：m/s）
 		enum class _state :int			  // 烟花的状态
 		{

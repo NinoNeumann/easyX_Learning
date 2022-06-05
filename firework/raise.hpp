@@ -6,8 +6,8 @@ namespace animation {
 	class firework;
 	class raise : public anima {
 	public:
-		static const int max_r = 25;	// 烟花球最大半径
-		static const int min_r = 15;	// 烟花球最小半径
+		static const int max_r = 50;	// 烟花球最大半径
+		static const int min_r = 30;	// 烟花球最小半径
 
 		enum class _state :int
 		{

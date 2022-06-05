@@ -50,6 +50,7 @@ void  animation::frame::Sleep(unsigned int ms)
 		if ((double(end.QuadPart - start.QuadPart) / double(tickPerSecond.QuadPart)) > (double(ms) / 1000.0)) {
 			break;
 		}
+	
 	}
 }
 

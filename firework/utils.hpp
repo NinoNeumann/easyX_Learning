@@ -15,6 +15,8 @@ namespace animation
 	* screenH 高度
 	*/
 	void ClearScreen(DWORD* pScreen, int screenW, int screenH);
+	void InitPositionSystem();
+	void DrawFrame(int Value, int x , int y);
 
 
 	/***************************用于产生随机数***********************/

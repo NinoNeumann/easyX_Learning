@@ -141,42 +141,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="bomb.h" />
     <ClInclude Include="bomb.hpp" />
-    <ClInclude Include="firework.h" />
     <ClInclude Include="firework.hpp" />
-    <ClInclude Include="frame.h" />
     <ClInclude Include="animation.hpp" />
     <ClInclude Include="frame.hpp" />
-    <ClInclude Include="global.h" />
     <ClInclude Include="global.hpp" />
-    <ClInclude Include="raise.h" />
     <ClInclude Include="raise.hpp" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="sound.h" />
     <ClInclude Include="sound.hpp" />
-    <ClInclude Include="tools.h" />
     <ClInclude Include="utils.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bomb.cpp" />
+    <ClCompile Include="animation_displayer_1.cpp" />
     <ClCompile Include="bomb_rebuild.cpp" />
-    <ClCompile Include="firework.cpp" />
+    <ClCompile Include="execute.cpp" />
     <ClCompile Include="firework_rebuild.cpp" />
-    <ClCompile Include="frame.cpp" />
     <ClCompile Include="frame_rebuild.cpp" />
-    <ClCompile Include="global.cpp" />
     <ClCompile Include="global_rebuild.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="raise.cpp" />
     <ClCompile Include="raise_rebuild.cpp" />
-    <ClCompile Include="sound.cpp" />
     <ClCompile Include="sound_rebuild.cpp" />
-    <ClCompile Include="tools.cpp" />
     <ClCompile Include="utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="firework.rc" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bomb.wav" />

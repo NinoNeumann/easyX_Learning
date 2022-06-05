@@ -14,5 +14,15 @@ namespace animation {
 		}
 	};
 
+	class displayer {
+	public:
+		virtual void Display() {
+			return;
+		}
+	};
 
+	class first_animation :public displayer {
+	public:
+		void Display();
+	};
 }

@@ -1,7 +1,7 @@
 #include "raise.hpp"
 #include <cmath>
 
-#define j2h(x) (200*3.1415926*(x)/180.0)
+#define j2h(x) (20*3.1415926*(x)/180.0)
 
 animation::raise::raise(
 	position _Pos, \

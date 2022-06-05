@@ -1,12 +1,12 @@
 #pragma once
 #include <Windows.h>
 #include "utils.hpp"
-#include "sound.h"
+#include "sound.hpp"
 
 namespace animation
 {
 	extern int angle;
-
+	extern IMAGE logo;
 	extern const double g;			// 重力加速度			(m/s^2)
 	extern double		a_windx;	// 水平方向风阻系数		(m/s^2)
 	extern const double v_max;		// 最大烟花一阶段初速度	(  m/s)
@@ -25,8 +25,8 @@ namespace animation
 	extern const int max_alive_time;// 爆炸粒子最大生存时间 （ms）
 	extern const int min_alive_time;// 爆炸粒子最小生存时间 （ms）
 
-	sy::sound& raiseSound();		// 全局使用一个 raise.wav 实例
-	sy::sound& bombSound();			// 全局使用一个  bomb.wav 实例
+	animation::sound& raiseSound();		// 全局使用一个 raise.wav 实例
+	animation::sound& bombSound();			// 全局使用一个  bomb.wav 实例
 	// todo  修改这两个音频文件  并且加入更多的音频文件
 
 	struct position

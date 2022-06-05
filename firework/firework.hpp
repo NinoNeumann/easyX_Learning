@@ -16,7 +16,7 @@ namespace animation
 	class firework:public anima
 	{
 	public:
-		const static int defaultNums = 60;		// 每个烟花爆炸后的爆炸颗粒个数，默认为 60 个
+		const static int defaultNums = 100;		// 每个烟花爆炸后的爆炸颗粒个数，默认为 60 个
 		enum class _state :int
 		{
 			START = 1,		// 初始状态

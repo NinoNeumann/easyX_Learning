@@ -1,4 +1,5 @@
 #include "utils.hpp"
+#include "global.hpp"
 
 void animation::ClearScreen(DWORD* pScreen, int screenW, int screenH)
 {
@@ -24,4 +25,29 @@ void animation::ClearScreen(DWORD* pScreen, int screenW, int screenH)
 	{
 		pScreen[i] = 0;
 	}
+}
+
+
+// 设置坐标系统
+void animation::InitPositionSystem()
+{
+	setaspectratio(static_cast<float>(animation::asp), static_cast<float>(-animation::asp));	// 设置缩放比例 以及坐标方向
+	setorigin(0, animation::scrH);				// 设置坐标原点
+}
+
+// 显示帧数
+void animation::DrawFrame(int Value, int x = 5, int y = 5)
+{
+	setbkmode(TRANSPARENT);			// 透明文字
+	settextcolor(RGB(0, 255, 0));
+	settextstyle(20, 0, TEXT("新宋体"));
+
+
+	setaspectratio(1.0, 1.0);		// 设置缩放比例 以及坐标方向， 在这里不设置回来的话，文字输出是镜面反转的
+	setorigin(0, 0);				// 设置坐标原点
+	TCHAR buff[256];
+	wsprintf(buff, _T("%d FPS"), Value);
+	outtextxy(x, y, buff);
+
+	InitPositionSystem();
 }

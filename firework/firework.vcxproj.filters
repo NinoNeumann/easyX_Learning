@@ -21,30 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="global.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="raise.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="bomb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="firework.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="frame.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="tools.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="sound.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="animation.hpp">
       <Filter>头文件\rebuild</Filter>
     </ClInclude>
@@ -71,30 +47,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="raise.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="global.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="bomb.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="firework.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="frame.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="tools.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="sound.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="raise_rebuild.cpp">
       <Filter>源文件\rebuild</Filter>
     </ClCompile>
@@ -116,11 +68,12 @@
     <ClCompile Include="sound_rebuild.cpp">
       <Filter>源文件\rebuild</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="firework.rc">
-      <Filter>资源文件</Filter>
-    </ResourceCompile>
+    <ClCompile Include="animation_displayer_1.cpp">
+      <Filter>源文件\rebuild</Filter>
+    </ClCompile>
+    <ClCompile Include="execute.cpp">
+      <Filter>源文件\rebuild</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bomb.wav">

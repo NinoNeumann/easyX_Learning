@@ -3,12 +3,15 @@
 namespace animation
 {
 	int angle = 0;
+	IMAGE logo;
+
+	
 	const double g = 9.8;	// 重力加速度			(m/s^2)
-	double a_windx = 0.0;  // 水平风阻系数			(m/s^2)
+	double a_windx = -2;  // 水平风阻系数			(m/s^2)
 	const double v_max = 28.0;	// 最大烟花一阶段初速度	(  m/s)
 	const double v_min = 15.8;	// 最小烟花一阶段初速度	(  m/s)
 	const double h_max = 40.0;  // 最大高度				(    m)
-	const double w_max = 70.0;	// 最大宽度              (    m)
+	const double w_max = 100.0;	// 最大宽度              (    m)
 
 	//int scrW = GetSystemMetrics(SM_CXSCREEN);	// 屏幕宽度
 	//int scrH = GetSystemMetrics(SM_CYSCREEN);	// 屏幕高度
@@ -25,15 +28,15 @@ namespace animation
 	const int max_alive_time = 1400;
 	const int min_alive_time = 1200;
 
-	sy::sound& raiseSound()
+	animation::sound& raiseSound()
 	{
-		static sy::sound sound(L"raise.wav", 0, 1000);
+		static animation::sound sound(L"raise.wav", 0, 1000);
 		return sound;
 	}
 
-	sy::sound& bombSound()
+	animation::sound& bombSound()
 	{
-		static sy::sound sound(L"bomb.wav", 0, 1000);
+		static animation::sound sound(L"bomb.wav", 0, 1000);
 		return sound;
 	}
 
