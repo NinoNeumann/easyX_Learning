@@ -5,6 +5,8 @@
 
 namespace sy 
 {
+	extern int angle;
+
 	extern const double g;			// 重力加速度			(m/s^2)
 	extern double		a_windx;	// 水平方向风阻系数		(m/s^2)
 	extern const double v_max;		// 最大烟花一阶段初速度	(  m/s)

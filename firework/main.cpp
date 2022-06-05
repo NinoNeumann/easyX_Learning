@@ -74,7 +74,7 @@ int main()
 		}
 		
 		//绘制帧数 
-		DrawFrame(calFrame.Value());
+		//DrawFrame(calFrame.Value());
 		
 		FlushBatchDraw();
 		calFrame.Flush();

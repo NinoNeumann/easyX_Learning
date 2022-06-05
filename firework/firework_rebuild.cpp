@@ -1,6 +1,7 @@
-ï»¿#include "firework.h"
+#include "firework.hpp"
 #include <algorithm>
-sy::firework::firework(sy::position pos, COLORREF color) :
+
+ animation::firework::firework( animation::position pos, COLORREF color):
 	m_pos(pos),
 	m_color(color),
 	m_inums(defaultNums),
@@ -8,39 +9,32 @@ sy::firework::firework(sy::position pos, COLORREF color) :
 	state(_state::START),
 	state_flag(0)
 {
-	m_raise = new sy::raise(pos);
-	m_raise->SetBomb(&firework::InitBombs);	// ä¸Šå‡ç»“æŸåï¼Œè°ƒç”¨æ­¤å‡½æ•°å®Œæˆçˆ†ç‚¸ç²’å­åˆå§‹åŒ–
+	m_raise = new  animation::raise(pos);
+	m_raise->SetBomb(&firework::InitBombs);	// ÉÏÉı½áÊøºó£¬µ÷ÓÃ´Ëº¯ÊıÍê³É±¬Õ¨Á£×Ó³õÊ¼»¯
 	m_raise->SetColor(m_color);
-	m_raise->SetFire(this);					// çˆ†ç‚¸åˆå§‹åŒ–çš„çƒŸèŠ±
+	m_raise->SetFire(this);					// ±¬Õ¨³õÊ¼»¯µÄÑÌ»¨
 	m_lsBombs.resize(m_inums);
-	// æ·»åŠ é¢å¤–çš„çˆ†ç‚¸æ•ˆæœ
-	m_IsBombs2.resize(m_inums);
-
 }
 
 // copy construct
-sy::firework::firework(const firework& fire)
+ animation::firework::firework(const firework& fire)
 {
-	this->m_raise = new raise(*fire.m_raise);		// å¤åˆ¶raise
-	this->m_raise->SetFire(this);					// çˆ†ç‚¸åˆå§‹åŒ–çš„çƒŸèŠ±
-	this->m_raise->SetBomb(&firework::InitBombs);	// çˆ†ç‚¸åˆå§‹åŒ–å‡½æ•°
+	this->m_raise = new raise(*fire.m_raise);		// ¸´ÖÆraise
+	this->m_raise->SetFire(this);					// ±¬Õ¨³õÊ¼»¯µÄÑÌ»¨
+	this->m_raise->SetBomb(&firework::InitBombs);	// ±¬Õ¨³õÊ¼»¯º¯Êı
 	this->m_color = fire.m_color;
 	this->m_lsBombs.resize(fire.m_lsBombs.size());
-	this->m_IsBombs2.resize(fire.m_IsBombs2.size());
 
-	for (int i = 0; i < fire.m_lsBombs.size(); ++i) // å¤åˆ¶çƒŸèŠ±é¢—ç²’
+	for (int i = 0; i < fire.m_lsBombs.size(); ++i) // ¸´ÖÆÑÌ»¨¿ÅÁ£
 	{
 		if (fire.m_lsBombs[i] != nullptr)
 		{
-			this->m_lsBombs[i] = new sy::bomb(*fire.m_lsBombs[i]);
+			this->m_lsBombs[i] = new  animation::bomb(*fire.m_lsBombs[i]);
 		}
 		else
 		{
 			this->m_lsBombs[i] = nullptr;
 		}
-		
-
-		
 	}
 
 	this->m_inums = fire.m_inums;
@@ -49,7 +43,7 @@ sy::firework::firework(const firework& fire)
 	this->state_flag = fire.state_flag;
 }
 
-sy::firework::~firework()
+ animation::firework::~firework()
 {
 	if (m_raise)
 	{
@@ -65,7 +59,7 @@ sy::firework::~firework()
 	}
 }
 
-void sy::firework::Update()
+void  animation::firework::Update()
 {
 	switch (state)
 	{
@@ -85,7 +79,7 @@ void sy::firework::Update()
 				m_lsBombs[i]->Update();
 			}
 
-			if (m_lsBombs[i]->IsDead())		// æ­»äº¡çš„çˆ†ç‚¸ç²’å­æ¸…é™¤æ‰
+			if (m_lsBombs[i]->IsDead())		// ËÀÍöµÄ±¬Õ¨Á£×ÓÇå³ıµô
 			{
 				delete m_lsBombs[i];
 				m_lsBombs.erase(m_lsBombs.begin() + i);
@@ -95,7 +89,7 @@ void sy::firework::Update()
 
 		if (state_flag >= m_inums)
 		{
-			state = _state::STOP;			// æ‰€æœ‰çˆ†ç‚¸ç²’å­éƒ½æ­»äº¡ï¼ŒçƒŸèŠ±çŠ¶æ€æ›´æ–°æˆ STOP ï¼Œ
+			state = _state::STOP;			// ËùÓĞ±¬Õ¨Á£×Ó¶¼ËÀÍö£¬ÑÌ»¨×´Ì¬¸üĞÂ³É STOP £¬
 		}
 		break;
 	case _state::STOP:
@@ -103,7 +97,7 @@ void sy::firework::Update()
 	}
 }
 
-void sy::firework::Draw()
+void  animation::firework::Draw()
 {
 	switch (state)
 	{
@@ -116,7 +110,7 @@ void sy::firework::Draw()
 	case _state::BOMB:
 		for (int i = 0; i < m_lsBombs.size(); ++i)
 		{
-			if (m_lsBombs[i] != nullptr) 
+			if (m_lsBombs[i] != nullptr)
 			{
 				m_lsBombs[i]->Draw();
 			}
@@ -127,20 +121,15 @@ void sy::firework::Draw()
 	}
 }
 
-// åˆå§‹åŒ–çƒŸèŠ±çˆ†ç‚¸é¢—ç²’
-void sy::firework::InitBombs(sy::firework* fire, const sy::position pos, int redius)
+// ³õÊ¼»¯ÑÌ»¨±¬Õ¨¿ÅÁ£
+void  animation::firework::InitBombs( animation::firework* fire, const  animation::position pos, int redius)
 {
 	for (int i = 0; i < fire->GetBombsArray().size(); ++i)
 	{
-		fire->GetBombsArray()[i] = new sy::bomb(pos, fire->GetColor());
+		fire->GetBombsArray()[i] = new  animation::bomb(pos, fire->GetColor());
 		fire->GetBombsArray()[i]->SetRedius(int(redius * 0.618));
-		fire->GetBombsArray()[i]->alive = sy::genRand.GetInt(min_alive_time, max_alive_time);
+		fire->GetBombsArray()[i]->alive =  animation::genRand.GetInt(min_alive_time, max_alive_time);
 	}
 	fire->SetBomb();
 	bombSound().Play();
-}
-
-void sy::firework::InitBombs_2(sy::firework* fire, const sy::position pos, int redius)
-{
-
 }

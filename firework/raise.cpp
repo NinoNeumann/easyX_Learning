@@ -1,5 +1,10 @@
 ﻿#include "raise.h"
 #include <cmath>
+#include<iostream>
+
+#define j2h(x) (200*3.1415926*(x)/180.0)
+
+
 sy::raise::raise(
 	position _Pos ,\
 	double	 _Vx  ,\
@@ -29,19 +34,31 @@ void sy::raise::Update()
 
 	// 更新速度
 	double old_vy = vy;
+	// 这里尝试修改一下烟花上升的轨迹 修改成sin函数那样子的
+	double old_vx = vx;
+	
+	vx = 0.5 * sin(j2h(sy::angle%3600))/100.0;
+	angle%=3600;
+	angle++;
+
+	//
 	vy = vy - g * dt / 1000.0;
+	//std::cout << this << "  " << dt<<"  angle:"<<angle << std::endl;
 	if (vy < 0.0) 
 	{						// 上升到顶点爆炸。
 		state = raise::_state::STOP;
 		if (beginBomb != nullptr)
 		{		// 调用用户的爆炸函数
-			beginBomb(theFire,pos,r);		
+			beginBomb(theFire,pos,r);	// 外部扩展的爆炸函数
+			return;
 		}
+		return;
 	}
 
 	// 更新位置
 	pos.y += old_vy * dt / 1000.0 - g * dt * dt / 2.0 / 1000000.0;	// 时间单位为 ms 所以除 1000000.0
 	pos.x += vx * dt;
+	//std::cout << this << "  " << dt << "  angle:" << angle <<"   pos x" <<pos.x<<"   vx" <<vx<< std::endl;
 
 }
 

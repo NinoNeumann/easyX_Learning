@@ -53,7 +53,7 @@ namespace sy
 		position	pos;	// 烟花位置
 		clock_t		ck;		// 当前时间记录
 		COLORREF	color;	// 记录颜色信息
-
+	
 		void (* beginBomb)(sy::firework *fire,const position pos, int redius); // 初始化爆炸效果的函数指针
 		sy::firework* theFire;	// 与beginBomb初始化爆炸效果函数配合使用，表示被初始化的烟花
 	};

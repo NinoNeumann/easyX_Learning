@@ -1,9 +1,11 @@
 ﻿#include "global.h"
+#include<iostream>
 
 namespace sy
 {
+	int angle = 0;
 	const double g     = 9.8;	// 重力加速度			(m/s^2)
-	double a_windx     = 0.0;  // 水平风阻系数			(m/s^2)
+	double a_windx     = -2.0;  // 水平风阻系数			(m/s^2)
 	const double v_max = 28.0;	// 最大烟花一阶段初速度	(  m/s)
 	const double v_min = 15.8;	// 最小烟花一阶段初速度	(  m/s)
 	const double h_max = 40.0;  // 最大高度				(    m)

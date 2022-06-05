@@ -53,10 +53,12 @@ namespace sy
 
 	public:
 		void static InitBombs(sy::firework *fire,const sy::position pos, int redius);	// 爆炸粒子的初始化
+		void static InitBombs_2(sy::firework* fire, const sy::position pos, int redius);
 	private:
 		sy::raise*				m_raise;	// 烟花上升过程
 
 		std::vector<sy::bomb*>	m_lsBombs;	// 烟花爆炸效果
+		std::vector<sy::firework*> m_IsBombs2;
 		int						m_inums;	// 烟花爆炸粒子个数
 		int						state_flag;	// 用于更新烟花状态时，对爆炸粒子处于 DEAD 的进行计数（当所有爆炸粒子都处于 DEAD 状态，烟花才会处于 STOP 状态，
 
