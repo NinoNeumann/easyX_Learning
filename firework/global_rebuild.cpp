@@ -11,7 +11,7 @@ namespace animation
 	const double v_max = 28.0;	// 最大烟花一阶段初速度	(  m/s)
 	const double v_min = 15.8;	// 最小烟花一阶段初速度	(  m/s)
 	const double h_max = 40.0;  // 最大高度				(    m)
-	const double w_max = 100.0;	// 最大宽度              (    m)
+	const double w_max = 100.0;	// 最大宽度             (    m)
 
 	//int scrW = GetSystemMetrics(SM_CXSCREEN);	// 屏幕宽度
 	//int scrH = GetSystemMetrics(SM_CYSCREEN);	// 屏幕高度

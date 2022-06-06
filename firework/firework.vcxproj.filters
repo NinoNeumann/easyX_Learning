@@ -86,4 +86,9 @@
       <Filter>资源文件</Filter>
     </Media>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>

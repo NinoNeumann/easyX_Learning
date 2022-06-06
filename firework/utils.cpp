@@ -40,14 +40,17 @@ void animation::DrawFrame(int Value, int x = 200, int y = 300)
 {
 	setbkmode(TRANSPARENT);			// 透明文字
 	settextcolor(RGB(255, 228, 181));
-	settextstyle(20, 20, TEXT("新宋体"));
+	settextstyle(30, 20, TEXT("新宋体"));
 
 
 	setaspectratio(1.0, 1.0);		// 设置缩放比例 以及坐标方向， 在这里不设置回来的话，文字输出是镜面反转的
 	setorigin(0, 0);				// 设置坐标原点
 	TCHAR buff[256];
 	//wsprintf(buff, _T("%s"), "HAPPY BRITHDAY!!");
+
 	outtextxy(x, y, _T("HAPPY BRITHDAY!!"));
+	outtextxy(x + 50, y + 50, _T("by Nino·Neumann"));
+	outtextxy(x + 100, y + 100, _T("powered by EasyX"));
 
 	InitPositionSystem();
 }

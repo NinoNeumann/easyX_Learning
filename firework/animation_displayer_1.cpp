@@ -74,7 +74,7 @@ void animation::first_animation::Display()
 		InitPositionSystem();
 
 		//»æÖÆÖ¡Êý 
-		DrawFrame(calFrame.Value(), animation::scrW/2, animation::scrH/2);
+		DrawFrame(calFrame.Value(), animation::scrW/4, animation::scrH/4);
 		FlushBatchDraw();
 		calFrame.Flush();
 
