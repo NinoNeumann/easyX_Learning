@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animation_displayer_1.cpp" />
+    <ClCompile Include="animation_displayer_2.cpp" />
     <ClCompile Include="bomb_rebuild.cpp" />
     <ClCompile Include="execute.cpp" />
     <ClCompile Include="firework_rebuild.cpp" />

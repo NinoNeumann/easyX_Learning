@@ -48,21 +48,15 @@ namespace animation
 
 	private:
 		position thePos;		// 烟花颗粒的位置
-
 		double vx;				// 速度向量
 		double vy;
 		double vz;
-
 		COLORREF theColor;		// 烟花爆炸颗粒的颜色
-
 		clock_t ck;				// 用于计算每帧飞行时间差信息，用来更新速度位置等信息
 		clock_t start_ck;		// 创建烟花爆炸颗粒的时间，用于更新烟花爆炸颗粒状态（每个颗粒都有个生存时间 alive），
-
 		int R;					// 烟花半径（单位：像素）
-
 		_state state;
 	public:
-
 		unsigned alive = 1000;	// 默认烟花存活时间
 	};
 

@@ -74,6 +74,9 @@
     <ClCompile Include="execute.cpp">
       <Filter>源文件\rebuild</Filter>
     </ClCompile>
+    <ClCompile Include="animation_displayer_2.cpp">
+      <Filter>源文件\rebuild</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bomb.wav">

@@ -36,18 +36,18 @@ void animation::InitPositionSystem()
 }
 
 // 显示帧数
-void animation::DrawFrame(int Value, int x = 5, int y = 5)
+void animation::DrawFrame(int Value, int x = 200, int y = 300)
 {
 	setbkmode(TRANSPARENT);			// 透明文字
-	settextcolor(RGB(0, 255, 0));
-	settextstyle(20, 0, TEXT("新宋体"));
+	settextcolor(RGB(255, 228, 181));
+	settextstyle(20, 20, TEXT("新宋体"));
 
 
 	setaspectratio(1.0, 1.0);		// 设置缩放比例 以及坐标方向， 在这里不设置回来的话，文字输出是镜面反转的
 	setorigin(0, 0);				// 设置坐标原点
 	TCHAR buff[256];
-	wsprintf(buff, _T("%d FPS"), Value);
-	outtextxy(x, y, buff);
+	//wsprintf(buff, _T("%s"), "HAPPY BRITHDAY!!");
+	outtextxy(x, y, _T("HAPPY BRITHDAY!!"));
 
 	InitPositionSystem();
 }

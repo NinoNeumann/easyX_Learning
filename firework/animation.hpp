@@ -25,4 +25,9 @@ namespace animation {
 	public:
 		void Display();
 	};
+
+	class second_animation : public displayer {
+	public:
+		void Display();
+	};
 }
